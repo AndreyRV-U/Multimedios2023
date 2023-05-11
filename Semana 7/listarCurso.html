@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div clas="container-fluid">
+
+    <header>
+      <!-- place navbar here -->
+    </header>
+    <main>
+      <div class="table-responsive">
+        <table class="table tble-striped
+        table-hover
+        table-borderless
+        table-primary
+        aling-middle">
+
+          <div class="table-light">
+            <caption>Listar Curso</caption>
+            <tr>
+              <th>id</th>
+              <th>Nombre</th>
+              <th>Descripcion</th>
+              <th>tiempo</th>
+              <th>Usuario</th>
+              <th>Acciones</th>
+
+            </tr>
+            <thead>
+            <tbody class="table-group-divider" id="resultados">
+
+
+            </tbody>
+            </thead>
+
+          </div>
+
+        </table>
+      </div>
+
+
+
+    </main>
+    <footer>
+      <!-- place footer here -->
+    </footer>
+
+    <!-- Button trigger modal -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalId">
+      Launch
+    </button>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitleId">Modal title</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div>
+                <div class="mb-3">
+                  <label for="" class="form-label">Nombre</label>
+                  <input type="text"
+                    class="form-control" name="nombre" id="Nombre" aria-describedby="helpId" placeholder="Nombre del curso">
+                  <small id="helpId" class="form-text text-muted">Ingresar el nomre del curso</small>
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Descripcion</label>
+                    <input type="text"
+                      class="form-control" name="Descripcion" id="Decripcion" aria-describedby="helpId" placeholder="Descripcio del curso">
+                    <small id="helpId" class="form-text text-muted">Ingresar la Descripcion del curso</small>
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Tiempo</label>
+                    <input type="text"
+                      class="form-control" name="tiempo" id="tiempo" aria-describedby="helpId" placeholder="tiempo del curso">
+                    <small id="helpId" class="form-text text-muted">Ingresar el tiempo del curso</small>
+                  </div>
+            </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      var modalId = document.getElementById('modalId');
+    
+      modalId.addEventListener('show.bs.modal', function (event) {
+          // Button that triggered the modal
+          let button = event.relatedTarget;
+          // Extract info from data-bs-* attributes
+          let recipient = button.getAttribute('data-bs-whatever');
+    
+        // Use above variables to manipulate the DOM
+      });
+    </script>
+    
+    
+  
+    <!-- Modal -->
+    <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitleId">Modal title</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              Add rows here
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      var modalId = document.getElementById('modalId');
+    
+      modalId.addEventListener('show.bs.modal', function (event) {
+          // Button that triggered the modal
+          let button = event.relatedTarget;
+          // Extract info from data-bs-* attributes
+          let recipient = button.getAttribute('data-bs-whatever');
+    
+        // Use above variables to manipulate the DOM
+      });
+    </script>
+    
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalTitleId">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              Add rows here
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var modalId = document.getElementById('modalId');
+
+      modalId.addEventListener('show.bs.modal', function (event) {
+        // Button that triggered the modal
+        let button = event.relatedTarget;
+        // Extract info from data-bs-* attributes
+        let recipient = button.getAttribute('data-bs-whatever');
+
+        // Use above variables to manipulate the DOM
+      });
+    </script>
+
+  </div>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
+
+
+  <script>
+
+    var contenidoTablaResultado = document.querySelector("#resultados");
+    function cargarDatos() {
+
+      fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaCurso.php")//la url de peticion
+        .then(repuesta => repuesta.json())//recibe los datos en json 
+        .then((datosrespuesta) => {
+          console.log('datosrespuesta', datosrespuesta.data)
+          settable(datosrespuesta.data)
+        })
+        .catch(console.log)
+    }
+
+    function settable(data) {
+      console.log("data", data);
+
+      for (const valor of data) {
+        console.log('valor:', valor);
+
+
+        contenidoTablaResultado.innerHTML +=
+          `<tr class="table-primary">
+                         <td scope="row">${valor.id}</td>
+                        <td>${valor.nombre}</td>
+                         <td>${valor.descripcion}</td>
+                         <td>${valor.tiempo}</td>
+                         <td>${valor.usuario}</td>
+
+                         <td>
+                            <a name="" id="" class="btn btn-danger" onclick="eliminar()" role="button">Borrar</a>
+                            <a name="" id="" class="btn btn-primary" onclick="editar('${valor.id}', '${valor.nombre}', '${valor.descripcion}', '${valor.tiempo}')" role="button">Editar</a>
+                            <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalId">
+                              Launch
+                            </button>
+                        </td>
+                     </tr>`;
+
+      }
+    }
+
+    function editar(id, nombre, descripcion, tiempo) {
+      alert('' + nombre);
+      myModal.show();
+      document.getElementById('nombre').value=nombre;
+
+    }
+
+    function eliminar() {
+      alert('eliminar');
+    }
+
+    cargarDatos();
+  </script>
+</body>
+
+</html>
