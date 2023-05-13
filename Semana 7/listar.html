@@ -38,7 +38,7 @@
                     </tr>
                     </thead>
                     <tbody class="table-group-divider" id="resultados">
-                            La funcion llena la tabla                                          
+                            La funcion llena la tabla  linea 41                                        
                     </tbody>
                     <tfoot>
                         
@@ -53,7 +53,7 @@
 
 <!-- Modal trigger button -->
 <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalId">
-  Launch
+  Agregar
 </button>
 
 
@@ -64,7 +64,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalTitleId">Modal title</h5>
+        <h5 class="modal-title" id="modalTitleId">Agregar</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -183,7 +183,8 @@
                               <a name="" id="" class="btn btn-danger" onclick="eliminar('${valor.id}')" role="button">Borrar</a>
                               ||
                               <a name="" id="" class="btn btn-primary" onclick="editar('${valor.id}', '${valor.nombre}', '${valor.descripcion}', '${valor.tiempo}')" role="button">Editar</a>
-                            </td>
+                              
+                              </td>
                         </tr>`; 
         }
     }
@@ -196,6 +197,25 @@
       document.getElementById('id').value = id;
 
     }
+
+    // function agregar(id, nombre, descripcion, tiempo){
+    //  var setId='';
+    //  var setNombre='';
+    //  var setDescripcion='';
+    //  var setTiempo='';
+    //   if (id.isEmpty() && nombre.isEmpty() && descripcion.isEmpty() && tiempo.isEmpty()) {
+        
+    //   } else {
+    //     myModal.show();
+    //    setId= document.getElementById('id').value;
+    //    setNombre= document.getElementById('nombre').value;
+    //    setDescripcion= document.getElementById('descripcion').value;
+    //    setTiempo= document.getElementById('tiempo').value;
+        
+    //   }
+
+    // }
+
 
     
     function eliminar(id){
