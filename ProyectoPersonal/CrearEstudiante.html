@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div id="contenido">
+          
+          
+            </div>
+        
+            <script>
+              // Utilizamos JavaScript para cargar el contenido de archivo1.html
+              var contenidoDiv = document.getElementById("contenido");
+          
+              // Creamos una instancia del objeto XMLHttpRequest
+              var xhttp = new XMLHttpRequest();
+          
+              // Especificamos el archivo que queremos cargar
+              xhttp.open("GET", "Menu.html", true);
+          
+              // Definimos el evento de carga
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  // Insertamos el contenido dentro del div
+                  contenidoDiv.innerHTML = this.responseText;
+                }
+              };
+          
+              // Enviamos la solicitud
+              xhttp.send();
+            </script>
+        </header>
+        <main>
+            <form id="formulario">
+                <div class="mb-3">
+                    <label for="" class="form-label">Cedula</label>
+                    <input type="text"
+                      class="form-control" name="cedula" id="cedula" aria-describedby="helpId" placeholder="Cedula del estudiante">
+                    <small id="helpId" class="form-text text-muted">Ingresa la cedula del estudiante</small>
+                  </div>
+    
+    
+                  <div class="mb-3">
+                    <label for="" class="form-label">Correo electronico</label>
+                    <input type="text"
+                      class="form-control" name="correoelectronico" id="correoelectronico" aria-describedby="helpId" placeholder="Correoelectronico del estudiante">
+                    <small id="helpId" class="form-text text-muted">Ingresa el Correoelectronico del estudiante</small>
+                  </div>
+    
+    
+                  <div class="mb-3">
+                    <label for="" class="form-label">Telefono</label>
+                    <input type="text"
+                      class="form-control" name="telefono" id="telefono" aria-describedby="helpId" placeholder="Telefono del estudiante">
+                    <small id="helpId" class="form-text text-muted">Ingresa el telefono del estudiante</small>
+                  </div>
+    
+                  <div class="mb-3">
+                    <label for="" class="form-label">Telefono celular</label>
+                    <input type="text"
+                      class="form-control" name="telefonocelular" id="telefonocelular" aria-describedby="helpId" placeholder="Telefono celular del estudiante">
+                    <small id="helpId" class="form-text text-muted">Ingresa Telefono celular del estudiante</small>
+                  </div>
+    
+                  <div class="mb-3">
+                    <label for="" class="form-label">Fecha nacimiento</label>
+                    <input type="text"
+                      class="form-control" name="fechanacimiento" id="fechanacimiento" aria-describedby="helpId" placeholder="Fecha nacimiento del estudiante">
+                    <small id="helpId" class="form-text text-muted">Ingresa la Fecha de nacimiento del estudiante</small>
+                  </div>
+    
+                  <div class="mb-3">
+                    <label for="" class="form-label">Sexo</label>
+                    <input type="text"
+                      class="form-control" name="sexo" id="sexo" aria-describedby="helpId" placeholder="Sexo del estudiante">
+                    <small id="helpId" class="form-text text-muted">Ingresa el sexo del estudiante</small>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="" class="form-label">Dirección</label>
+                    <input type="text"
+                      class="form-control" name="direccion" id="direccion" aria-describedby="helpId" placeholder="Nombre del estudiante">
+                    <small id="helpId" class="form-text text-muted">Ingresa la direccion del estudiante</small>
+                    </div>
+    
+    
+                  <div class="mb-3">
+                    <label for="" class="form-label">Nombre</label>
+                    <input type="text"
+                      class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Nombre del estudiante">
+                    <small id="helpId" class="form-text text-muted">Ingresa el nombre del estudiante</small>
+                    </div>
+                    <div class="mb-3">
+                      <label for="" class="form-label">Apellido paterno</label>
+                      <input type="text"
+                        class="form-control" name="apellidopaterno" id="apellidopaterno" aria-describedby="helpId" placeholder="Apellido paterno del estudiante">
+                      <small id="helpId" class="form-text text-muted">Ingresa el apellido paterno del estudiante</small>
+                    </div>        
+                    
+                    <div class="mb-3">
+                        <label for="" class="form-label">Apellido materno</label>
+                        <input type="text"
+                          class="form-control" name="apellidomaterno" id="apellidomaterno" aria-describedby="helpId" placeholder="Apellido materno del estudiante">
+                        <small id="helpId" class="form-text text-muted">Ingresa el apellido materno del estudiante</small>
+                      </div>   
+    
+                      <div class="mb-3">
+                        <label for="" class="form-label">Nacionalidad</label>
+                        <input type="text"
+                          class="form-control" name="nacionalidad" id="nacionalidad" aria-describedby="helpId" placeholder="Nacionalidad del estudiante">
+                        <small id="helpId" class="form-text text-muted">Ingresa la nacionalidad del estudiante</small>
+                      </div>   
+    
+                      <div class="mb-3">
+                        <label for="" class="form-label">Id Carreras</label>
+                        <input type="text"
+                          class="form-control" name="idCarreras" id="idCarreras" aria-describedby="helpId" placeholder="IdCarreras del estudiante">
+                        <small id="helpId" class="form-text text-muted">Ingresa el Id Carreras del estudiante</small>
+                      </div>   
+    
+                      <div class="mb-3">
+                        <label for="" class="form-label">Usuario</label>
+                        <input type="text"
+                          class="form-control" name="usuario" id="usuario" aria-describedby="helpId" placeholder="Usuario del estudiante">
+                        <small id="helpId" class="form-text text-muted">Ingresa el Usuario del estudiante</small>
+                      </div>   
+                    <div class="mb-3">
+                        <button type="reset" class="btn btn-danger">Reset</button>
+                        <button type="submit" class="btn btn-primary">Crear</button>
+                      
+        
+                    </div>                                 
+            </form>
+        </main>
+        <footer>
+            <!-- place footer here -->
+        </footer>
+    </div>
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+
+<script>
+    var formulario = document.getElementById('formulario');
+
+    formulario.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        alert('Los datos se agregaron correctamente');
+       //  var id = document.getElementById('id').value;
+          
+           var cedula = document.getElementById('cedula').value;
+           var correoelectronico = document.getElementById('correoelectronico').value;
+           var telefono = document.getElementById('telefono').value;
+           var telefonocelular = document.getElementById('telefonocelular').value;
+           var fechanacimiento = document.getElementById('fechanacimiento').value;
+           var sexo = document.getElementById('sexo').value;
+           var direccion = document.getElementById('direccion').value;
+           var nombre = document.getElementById('nombre').value;
+           var apellidopaterno = document.getElementById('apellidopaterno').value;
+           var apellidomaterno = document.getElementById('apellidomaterno').value;
+           var nacionalidad = document.getElementById('nacionalidad').value;
+           var idCarreras = document.getElementById('idCarreras').value;
+           var usuario = document.getElementById('usuario').value;
+
+        var datosenviar = {
+            id :  "",
+            cedula : cedula,
+            correoelectronico : correoelectronico,
+            telefono : telefono,
+            telefonocelular : telefonocelular,
+            fechanacimiento : fechanacimiento,
+            sexo : sexo,
+            direccion : direccion,
+            nombre : nombre,
+            apellidopaterno : apellidopaterno,
+            apellidomaterno : apellidomaterno,
+            nacionalidad : nacionalidad,
+            idCarreras : idCarreras,
+            usuario : usuario
+        }
+        console.log(datosenviar);
+        fetch("https://paginas-web-cr.com/ApiPHP/apis/InsertarEstudiantes.php",
+        {
+            method:"POST",
+            body:JSON.stringify(datosenviar)
+        })//url de peticion de datos
+        .then(respuesta => respuesta.json())//recibe los datos en formato json
+        .then((datosrepuesta) => {         
+            window.location = 'Profesores.html'   
+             console.log('Datos',datosrepuesta)//Muestra el resultado de la peticion
+        })
+        .catch(console.log)//muestra errores
+    });
+
+    
+
+
+</script>
+
+
+</body>
+
+</html>
+
+<!-- if(cedula == ''|| correoelectronico == ''||telefono == ''||telefonocelular == ''||fechanacimiento == ''||sexo == ''||direccion == ''||nombre == ''
+||apellidopaterno == ''||apellidomaterno == ''||nacionalidad == ''||idCarreras == ''||usuario == '')
+ {
+     event.preventDefault(); 
+
+
+alert('Por favor, completa todos los campos.');
+
+
+
+}else{
+
+alert('Los datos se agregaron correctamente');
+var datosenviar = {
+ id :  "",
+ cedula : cedula,
+ correoelectronico : correoelectronico,
+ telefono : telefono,
+ telefonocelular : telefonocelular,
+ fechanacimiento : fechanacimiento,
+ sexo : sexo,
+ direccion : direccion,
+ nombre : nombre,
+ apellidopaterno : apellidopaterno,
+ apellidomaterno : apellidomaterno,
+ nacionalidad : nacionalidad,
+ idCarreras : idCarreras,
+ usuario : usuario
+ 
+}
+} -->

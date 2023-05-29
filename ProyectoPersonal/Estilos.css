@@ -6,15 +6,52 @@
 }
 
 .main{
-    background-color: blue;
+    background-color: lightsalmon;
     height: 50vh;
     width: 100%;
     margin-bottom: -1%;
 }
 
 .footer{
-    background-color: red;
+    background-color: whitesmoke;
     height: 10vh;
     width: 100%;
 
 }
+.men{
+    background-color: whitesmoke;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 17px;
+    width: 100%;
+  padding: 10px 20px;
+ 
+}
+
+.body{
+    background-color: white;
+}
+
+.encabezado {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .imagen-alargada {
+    width: 100%; /* Ancho del contenedor */
+    height: 250px; /* Altura deseada para la imagen */
+    display: flex;
+    text-align: center;
+
+  }
+
+  .texto{
+
+    text-align: center;
+  }
+  
+  

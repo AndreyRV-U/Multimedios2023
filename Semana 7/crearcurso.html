@@ -24,7 +24,7 @@
             <div class="mb-3">
               <label for="" class="form-label">Nombre</label>
               <input type="text"
-                class="form-control" name="nombre" id="Nombre" aria-describedby="helpId" placeholder="Nombre del curso">
+                class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Nombre del curso">
               <small id="helpId" class="form-text text-muted">Ingresar el nomre del curso</small>
             </div>
             <div class="mb-3">
@@ -62,34 +62,90 @@
   </script>
 
   <script>
-    var formulario = document.getElementById('formulario');
-
-    formulario.addEventListener('submit', function(e){
-        e.preventDefault();
+    // var formulario = document.getElementById('formulario');
+    
+    // formulario.addEventListener('submit', function(e){
+ 
+    //     e.preventDefault();
         
-        alert('salvadon');
-        var datosenviar = {
-        nombre: ' Progra 1',
-        descripcion: 'Programacion',
-        tiempo: '15 semanas', 
-        usuario: 'Profesor Mario'
-    }
+        
+    //     alert('salvadon');
+    //     var datosenviar = {
+    //     nombre:' nombre ',
+    //     descripcion: 'Programacion',
+    //     tiempo: '15 semanas', 
+    //     usuario: 'Profesor Mario'
+    // }
     
 
-    fetch("https://paginas-web-cr.com/ApiPHP/apis/InsertarCursos.php",
+    // fetch("https://paginas-web-cr.com/ApiPHP/apis/InsertarCursos.php",
+    // {
+    //     method:"POST",
+    //     body:JSON.stringify(datosenviar)
+    // }
+    
+    // )//la url de peticion
+    //     .then(repuesta => repuesta.json())//recibe los datos en json 
+    //     .then((datosrespuesta)=>{
+    //         console.log('Datos', datosrespuesta)
+    //     })
+    //     .catch(console.log)
+
+    // });
+
+
+
+
+
+    var formulario = document.getElementById('formulario');
+      var ANombre = document.getElementById('nombre');
+      var ADescripcion = document.getElementById('Decripcion');
+      var ATiempo = document.getElementById('tiempo');
+    
+    formulario.addEventListener('submit', function(event){
+ 
+      event.preventDefault();
+        
+        
+        alert('salvadon');
+        GuardarDatos();
+        window.location = 'Estudiantes.html'
+
+    });
+
+
+    function GuardarDatos(){
+
+      var url = 'https://paginas-web-cr.com/ApiPHP/apis/InsertarCursos.php'
+      var datos = {
+
+        nombre:ANombre.value,
+        descripcion:ADescripcion.value,
+        tiempo:ATiempo.value
+
+      };
+
+      fetch(url,
     {
-        method:"POST",
-        body:JSON.stringify(datosenviar)
+        method:'POST',
+        body:JSON.stringify(datos)
     }
     
     )//la url de peticion
         .then(repuesta => repuesta.json())//recibe los datos en json 
-        .then((datosrespuesta)=>{
-            console.log('Datos', datosrepuesta)
+        .then(data => {
+    console.log('Datos guardados correctamente:', data);
         })
-        .catch(console.log)
+        .catch(error => {
+    console.error('Error al guardar los datos:', error);
+    // Maneja el error de acuerdo a tus necesidades
+  });
 
-    });
+      
+    }
+
+
+
   </script>
 </body>
 
