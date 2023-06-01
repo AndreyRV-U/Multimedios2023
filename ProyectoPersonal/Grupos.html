@@ -100,8 +100,11 @@
               <div class="mb-3">
                 <input type="hidden" id="id" name="id">
                 <label for="" class="form-label">Nombre</label>
-                <input type="text"
-                  class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Nombre del curso">
+                <select id="mySelect">
+                  <option value="">Selecciona una opción</option>
+                </select>
+                <!-- <input type="text"
+                  class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Nombre del curso"> -->
                 <small id="helpId" class="form-text text-muted">Ingresa el nombre del Grupo</small>
               </div>        
                 <div class="mb-3">
@@ -238,6 +241,10 @@
       }
         cargarDatos();
 
+
+
+        
+        
 
       </script>
     </body>

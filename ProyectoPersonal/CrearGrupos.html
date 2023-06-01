@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-  <title>Title</title>
+  <title>Crear Curso</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -48,7 +48,7 @@
                 <div class="mb-3">
                   <label for="" class="form-label">Nombre</label>
                   <input type="text"
-                    class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Nombre del curso">
+                    class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Nombre del grupo">
                   <small id="helpId" class="form-text text-muted">Ingresa el nombre del Grupo</small>
                 </div>
       
@@ -58,6 +58,44 @@
 
                   </div>                         
             </form>
+
+
+
+             <!-- Modal Confirmar Agregado  -->
+             <div class="modal fade" id="Agregado" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+             role="dialog" aria-labelledby="CorrectoTitulo" aria-hidden="true">
+             <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+               <div class="modal-content">
+                 <div class="modal-header bg-success custom-header" >
+                   <h5 class="modal-title" id="modalTitleId">Accion Completada</h5>
+                   <button onclick="window.location='ListaCurso.html'" type="button" class="btn-close" data-bs-dismiss="modal"
+                     aria-label="Close"></button>
+                 </div>
+                 <div class="modal-body justify-content-center">
+                   Los datos se agregaron correctamente
+                 </div>
+               </div>
+             </div>
+           </div>
+ 
+ 
+           <!-- Modal completar datos -->
+           <div class="modal fade" id="Completar" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="document"
+       aria-labelledby="errorTitulo" aria-hidden="true">
+       <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+         <div class="modal-content">
+           <div class="modal-header bg-warning custom-header">
+             <h5 class="modal-title" id="modalTitleId">Error</h5>
+             <button onclick="window.location" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body justify-content-center">
+             Por favor, completa todos los campos.
+           </div>
+         </div>
+       </div>
+     </div>
+ 
+
         </main>
         <footer>
             <!-- place footer here -->
@@ -75,20 +113,44 @@
 
 <script>
     var formulario = document.getElementById('formulario');
+    const ModalAgregado = new bootstrap.Modal(document.getElementById('Agregado'));
+    const ModalError = new bootstrap.Modal(document.getElementById('Completar'));
+
+
+function ConfirmacionAgregar() {
+
+  ModalAgregado.show();
+}
+
+function Completar() {
+  ModalError.show();
+    }
 
     formulario.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        alert('Los datos se agregaron correctamente');
+     
        //  var id = document.getElementById('id').value;
             var nombre = document.getElementById('nombre').value;
 
-            
+            if(nombre == '')
+            {
+                event.preventDefault(); 
 
+
+                Completar();
+        
+
+        
+           
+    }else{       
+
+      ConfirmacionAgregar();
         var datosenviar = {
             nombre: nombre,
 
         }
+      }
         console.log(datosenviar);
         fetch("https://paginas-web-cr.com/ApiPHP/apis/InsertarGrupo.php",
         {
@@ -104,6 +166,24 @@
     });
 
     
+
+
+
+
+    function setTabla(datos){
+         
+         console.log('dato.........s', datos);
+           //contenidoTablaResultado.innerHTML = 'test';
+           for (const valor of datos) {
+
+            document.getElementById("select") 
+            info = desplegable.createElement("opción");  
+
+            info.value = Index;
+            info.value.text = datoscargados.nombre
+
+           }
+       }
 
 
 </script>

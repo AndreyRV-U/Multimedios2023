@@ -144,6 +144,43 @@
         
                     </div>                                 
             </form>
+
+
+             <!-- Modal Confirmar Agregado  -->
+             <div class="modal fade" id="Agregado" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+             role="dialog" aria-labelledby="CorrectoTitulo" aria-hidden="true">
+             <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+               <div class="modal-content">
+                 <div class="modal-header bg-success custom-header" >
+                   <h5 class="modal-title" id="modalTitleId">Accion Completada</h5>
+                   <button onclick="window.location='ListaCurso.html'" type="button" class="btn-close" data-bs-dismiss="modal"
+                     aria-label="Close"></button>
+                 </div>
+                 <div class="modal-body justify-content-center">
+                   Los datos se agregaron correctamente
+                 </div>
+               </div>
+             </div>
+           </div>
+ 
+ 
+           <!-- Modal completar datos -->
+           <div class="modal fade" id="Completar" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="document"
+       aria-labelledby="errorTitulo" aria-hidden="true">
+       <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+         <div class="modal-content">
+           <div class="modal-header bg-warning custom-header">
+             <h5 class="modal-title" id="modalTitleId">Error</h5>
+             <button onclick="window.location" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body justify-content-center">
+             Por favor, completa todos los campos.
+           </div>
+         </div>
+       </div>
+     </div>
+ 
+
         </main>
         <footer>
             <!-- place footer here -->
@@ -161,12 +198,24 @@
 
 <script>
     var formulario = document.getElementById('formulario');
+    const ModalAgregado = new bootstrap.Modal(document.getElementById('Agregado'));
+    const ModalError = new bootstrap.Modal(document.getElementById('Completar'));
+
+
+function ConfirmacionAgregar() {
+
+  ModalAgregado.show();
+}
+
+function Completar() {
+  ModalError.show();
+    }
 
     formulario.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        alert('Los datos se agregaron correctamente');
-       //  var id = document.getElementById('id').value;
+        
+       
           
            var cedula = document.getElementById('cedula').value;
            var correoelectronico = document.getElementById('correoelectronico').value;
@@ -182,6 +231,18 @@
            var idCarreras = document.getElementById('idCarreras').value;
            var usuario = document.getElementById('usuario').value;
 
+           if(cedula == ''|| correoelectronico == ''||telefono == ''||telefonocelular == ''||fechanacimiento == ''||sexo == ''||direccion == ''||nombre == ''||apellidopaterno == ''||apellidomaterno == ''||nacionalidad == ''||idCarreras == ''||usuario == '')
+            {
+                event.preventDefault(); 
+
+
+                Completar();
+
+        
+           
+    }else{
+
+      ConfirmacionAgregar();
         var datosenviar = {
             id :  "",
             cedula : cedula,
@@ -198,6 +259,7 @@
             idCarreras : idCarreras,
             usuario : usuario
         }
+      }
         console.log(datosenviar);
         fetch("https://paginas-web-cr.com/ApiPHP/apis/InsertarProfesores.php",
         {

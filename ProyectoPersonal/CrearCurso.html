@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-  <title>Title</title>
+  <title>Crear curso</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -64,11 +64,54 @@
                     <small id="helpId" class="form-text text-muted">Ingresa el Tiempo del curso</small>
                   </div>         
                   <div class="mb-3">
+                    <label for="" class="form-label">usuario</label>
+                    <input type="text"
+                      class="form-control" name="usuario" id="usuario" aria-describedby="helpId" placeholder="Usuario del curso">
+                    <small id="helpId" class="form-text text-muted">Ingresa el usuario del curso</small>
+                  </div>        
+                  <div class="mb-3">
                     <button type="reset" class="btn btn-danger">Reset</button>
                     <button type="submit" class="btn btn-primary">Crear</button>
 
                   </div>                         
             </form>
+
+
+
+            <!-- Modal Confirmar Agregado  -->
+            <div class="modal fade" id="Agregado" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+            role="dialog" aria-labelledby="CorrectoTitulo" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+              <div class="modal-content">
+                <div class="modal-header bg-success custom-header" >
+                  <h5 class="modal-title" id="modalTitleId">Accion Completada</h5>
+                  <button onclick="window.location='ListaCurso.html'" type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                </div>
+                <div class="modal-body justify-content-center">
+                  Los datos se agregaron correctamente
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Modal completar datos -->
+          <div class="modal fade" id="Completar" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="document"
+      aria-labelledby="errorTitulo" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-warning custom-header">
+            <h5 class="modal-title" id="modalTitleId">Error</h5>
+            <button onclick="window.location" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body justify-content-center">
+            Por favor, completa todos los campos.
+          </div>
+        </div>
+      </div>
+    </div>
+
         </main>
         <footer>
             <!-- place footer here -->
@@ -86,6 +129,18 @@
 
 <script>
     var formulario = document.getElementById('formulario');
+    const ModalAgregado = new bootstrap.Modal(document.getElementById('Agregado'));
+    const ModalError = new bootstrap.Modal(document.getElementById('Completar'));
+
+
+function ConfirmacionAgregar() {
+
+  ModalAgregado.show();
+}
+
+function Completar() {
+  ModalError.show();
+    }
 
     formulario.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -95,24 +150,23 @@
             var nombre = document.getElementById('nombre').value;
             var descripcion = document.getElementById('descripcion').value;
             var tiempo = document.getElementById('tiempo').value;
+            var usuario = document.getElementById('usuario').value;
 
-            if(nombre == ''|| descripcion == ''||tiempo == '')
+            if(nombre == ''|| descripcion == ''||tiempo == ''||usuario == '')
             {
                 event.preventDefault(); 
 
 
-        alert('Por favor, completa todos los campos.');
-
-        
+                Completar();
            
     }else{
             
-                alert('Los datos se agregaron correctamente');
+      ConfirmacionAgregar();
         var datosenviar = {
             nombre: nombre,
             descripcion:descripcion,
             tiempo:tiempo,
-            usuario:'Andrey' 
+            usuario:usuario 
         }
 
     }
@@ -130,13 +184,49 @@
         .catch(console.log)//muestra errores
     });
 
-    
 
+
+    // function mensaje(msj){
+    //   var mod= "";
+    //   document.getElementById('mensa').innerHTML = msj;
+    //   myModalM.show();
+    // }
     
 
 
 </script>
 
+
+
+<!-- <div class="modal fade" id="modalIdM" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitleId">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="mensaje">
+       
+          <div class="mb-3">
+      <p class="text-dark" id="mensa"> </p>
+
+          </div>
+            
+                                
+      </form>
+      
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div> -->
 
 
 
